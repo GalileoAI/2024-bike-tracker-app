@@ -19,12 +19,20 @@ class RepetetiveAudioPlayer {
   }
 
   void run() async {
+    if (_paused) {
+      _paused = false;
+    }
+
     while (!_paused) {
-      await _singleAudioStep();
+      await _singleLoopStep();
     }
   }
 
-  Future<void> _singleAudioStep() async {
+  void pause() {
+    _paused = true;
+  }
+
+  Future<void> _singleLoopStep() async {
     await _audioPlayer.play(AssetSource(audioPath));
     _audioPlayer.setPlaybackRate(5);
 

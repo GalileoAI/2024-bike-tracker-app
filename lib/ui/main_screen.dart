@@ -1,4 +1,3 @@
-import 'package:anty_rower/enums.dart';
 import 'package:anty_rower/providers/bike_pos_provider.dart';
 import 'package:anty_rower/providers/driver_screen_provider.dart';
 import 'package:anty_rower/ui/driver/driver_screen.dart';
@@ -7,15 +6,8 @@ import 'package:provider/provider.dart';
 
 import '../providers/gps_pos_provider.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
-
-  @override
-  State<StatefulWidget> createState() => MainScreenState();
-}
-
-class MainScreenState extends State<MainScreen> {
-  MainScreenMode mainScreenMode = MainScreenMode.driver;
 
   @override
   Widget build(BuildContext context) {
