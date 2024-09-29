@@ -1,0 +1,4 @@
+enum MainScreenMode {
+  biker,
+  driver,
+}
