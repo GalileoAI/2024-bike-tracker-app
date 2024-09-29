@@ -1,7 +1,6 @@
 import 'package:anty_rower/providers/driver_screen_provider.dart';
 import 'package:anty_rower/ui/driver/audio_player.dart';
 import 'package:anty_rower/ui/driver/radar_circle.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DriverScreen extends StatefulWidget {
@@ -33,8 +32,11 @@ class DriverScreenState extends State<DriverScreen>
 
   @override
   Widget build(BuildContext context) {
+    // Half of total height - AppBar height
     final double screenMiddleVertical =
         (MediaQuery.of(context).size.height / 2 - 56);
+
+    // Half of total width - half of the bicycle icon width
     final double screenMiddleHorizontal =
         (MediaQuery.of(context).size.width / 2 - 15);
 
