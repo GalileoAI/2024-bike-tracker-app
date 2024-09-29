@@ -1,16 +1,20 @@
-# anty_rower
+# BikeTracker
 
-A new Flutter project.
+BikeTracker will let you know when there is a cyclist near you, even if they are invisible to you.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is mobile application part of BikeTracker system.
+Before next steps execution, be sure that your mobile device and computer are connected to the same local network and able to discover each other.
 
-A few resources to get you started if this is your first Flutter project:
+To build and run mobile appliaction on your smartphone, follow instructions below:
+...
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To simulate reference positioning system:
+1. Clone [This](https://github.com/GalileoAI/2024-bike-tracker-backend) repository.
+2. Run gps_over_udp_test_mock.py providing IP address and por as parameters:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   `python gps_over_udp_test_mock.py <ip> <port>`
+
+
+
