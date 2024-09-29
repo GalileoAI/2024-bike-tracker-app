@@ -17,7 +17,8 @@ class DriverScreen extends StatefulWidget {
 
 class DriverScreenState extends State<DriverScreen>
     with SingleTickerProviderStateMixin {
-  RepetetiveAudioPlayer repetetiveAudioPlayer =
+  static const int _bikePositionScale = 30;
+  final RepetetiveAudioPlayer _repetetiveAudioPlayer =
       RepetetiveAudioPlayer("sounds/scary.mp3");
   late AnimationController _animationController;
 
@@ -40,7 +41,7 @@ class DriverScreenState extends State<DriverScreen>
     final double screenMiddleHorizontal =
         (MediaQuery.of(context).size.width / 2 - 15);
 
-    repetetiveAudioPlayer.setWaitTime(
+    _repetetiveAudioPlayer.setWaitTime(
       widget.driverScreenProvider.proximity / 10,
     );
 
@@ -97,17 +98,19 @@ class DriverScreenState extends State<DriverScreen>
               ),
               AnimatedPositioned(
                 top: screenMiddleVertical +
-                    widget.driverScreenProvider.bikePositionRelativeToUser.$1 *
-                        30,
+                    widget.driverScreenProvider.bikeToUserVector.$1 *
+                        _bikePositionScale,
                 left: screenMiddleHorizontal +
-                    widget.driverScreenProvider.bikePositionRelativeToUser.$2 *
-                        30,
+                    widget.driverScreenProvider.bikeToUserVector.$2 *
+                        _bikePositionScale,
                 duration: const Duration(milliseconds: 400),
                 child: Container(
                   width: 30,
                   height: 30,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(15),
+                      ),
                       color: Colors.red.withOpacity(0.8)),
                   child: const Icon(
                     Icons.pedal_bike,
@@ -120,7 +123,7 @@ class DriverScreenState extends State<DriverScreen>
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          repetetiveAudioPlayer.run();
+          _repetetiveAudioPlayer.run();
         },
         child: const Icon(Icons.radar),
       ),

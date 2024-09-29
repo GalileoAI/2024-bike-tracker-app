@@ -12,7 +12,7 @@ class DriverScreenProvider extends ChangeNotifier {
         pow(_gpsPos.$1 - _bikerPos.$1, 2) + pow(_gpsPos.$2 - _bikerPos.$2, 2),
       );
 
-  (int, int) get bikePositionRelativeToUser =>
+  (int, int) get bikeToUserVector =>
       (_bikerPos.$1 - _gpsPos.$1, _bikerPos.$2 - _gpsPos.$2);
 
   void setGpsPos((int, int) gpsPos) {
