@@ -1,8 +1,7 @@
 import 'dart:io';
 
 class UdpServer {
-  final InternetAddress address =
-      InternetAddress.tryParse("192.0.0.4") ?? InternetAddress.anyIPv4;
+  final InternetAddress address = InternetAddress.anyIPv4;
   final int port;
   void Function(String)? onMessage;
 
